@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="Content-Language" content="zh-TW">
+    <meta name="description" content="網站提供第三方住宿平台，讓用戶能夠親身體驗台灣原住民布農族文化。">
 
     <title>台灣高雄市住宿</title>
     <link href="https://icons.iconarchive.com/icons/iconka/home-sweet-home/128/Home-Wigwam-icon.png" rel="icon"
@@ -40,12 +40,12 @@
 
             <div>
                 <!-- Filter Button -->
-                <button id="sidebarCollapse" class="btn-filter btn-lg">Filter<i class="fa fa-filter fa-fw"
+                <button id="sidebarCollapse" class="navbar-toggler btn-lg">Filter<i class="fa fa-filter fa-fw"
                         aria-hidden="true"></i>
                 </button>
 
                 <!-- Menu Button -->
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive"
+                <button class="navbar-toggler btn-lg" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i
                         class="fa fa-bars fa-fw"></i>
                 </button>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="county-scroll">
-            <div class="county"><a href="../當地訂房資訊/Hualien.html">
+            <div class="county"><a href="./Hualien.html">
                     <div class="county-overlay"></div><img alt="花蓮縣" class="county-image"
                         src="https://cf.bstatic.com/xdata/images/region/square250/68616.webp?k=ad97f37aa991386dc5fa93a79a527b9c0836e2dab7255581f353c22d1452d87d">
                     <div class="county-block">
@@ -98,7 +98,7 @@
                 </a>
             </div>
 
-            <div class="county"><a href="../當地訂房資訊/Nantou.html">
+            <div class="county"><a href="./Nantou.html">
                     <div class="county-overlay"></div><img alt="南投縣" class="county-image"
                         src="https://cf.bstatic.com/xdata/images/region/square250/64328.webp?k=b6ce6a2bb895cd74c31372bb28c20bc7a2f590c208b79e7473e7640f033c7daf">
                     <div class="county-block">
@@ -110,7 +110,7 @@
                 </a>
             </div>
 
-            <div class="county"><a href="../當地訂房資訊/Taitung.html">
+            <div class="county"><a href="./Taitung.html">
                     <div class="county-overlay"></div><img alt="台東縣" class="county-image"
                         src="https://cf.bstatic.com/xdata/images/region/square250/69953.webp?k=762ad2efb7b8c8c52f10257e3f926f2bda8bf11ce64b1824ea6437998fe28310">
                     <div class="county-block">
@@ -129,12 +129,12 @@
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
         </button>
 
-        <div class="sidebar-bg">
+        <div class="sidebar-container">
             <nav id="sidebar">
                 <div class="filter">
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input id="myInput" type="text" class="form-control" placeholder="搜尋住宿">
+                        <input id="myInput" type="search" name="q" class="form-control" placeholder="搜尋住宿">
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@
                     <div id="rangestart">
                         <div class="ui input left icon">
                             <i class="calendar icon"></i>
-                            <input type="text" class="form-control" placeholder="入住日期">
+                            <input id="myStartDate" type="text" class="form-control" placeholder="入住日期">
                         </div>
                     </div>
                 </div>
@@ -151,182 +151,85 @@
                     <div id="rangeend">
                         <div class="ui input left icon">
                             <i class="calendar icon"></i>
-                            <input type="text" class="form-control" placeholder="退房日期">
+                            <input id="myEndDate" type="text" class="form-control" placeholder="退房日期">
                         </div>
                     </div>
                 </div>
 
                 <div class="filter">
-                    <select class="form-control form-color">
-                        <option selected disabled>客房</option>
-                        <option>1 間房</option>
-                        <option>2 間房</option>
-                        <option>3 間房</option>
-                        <option>4 間房</option>
-                        <option>5 間房</option>
-                        <option>6 間房</option>
-                        <option>7 間房</option>
-                        <option>8 間房</option>
+                    <select id="myRoomNum" aria-label="State" class="form-control form-color">
+                        <option selected disabled value>客房</option>
+                        <option value="1">1 間房</option>
+                        <option disabled value="2">2 間房</option>
+                        <option disabled value="3">3 間房</option>
+                        <option disabled value="4">4 間房</option>
+                        <option disabled value="5">5 間房</option>
+                        <option disabled value="6">6 間房</option>
+                        <option disabled value="7">7 間房</option>
+                        <option disabled value="8">8 間房</option>
                     </select>
                 </div>
 
                 <div class="filter">
-                    <select class="form-control form-color">
-                        <option selected disabled>成人</option>
-                        <option>1 位成人</option>
-                        <option>2 位成人</option>
-                        <option>3 位成人</option>
-                        <option>4 位成人</option>
-                        <option>5 位成人</option>
-                        <option>6 位成人</option>
-                        <option>7 位成人</option>
-                        <option>8 位成人</option>
-                        <option>9 位成人</option>
-                        <option>10 位成人</option>
+                    <select id="myAdultNum" aria-label="State" class="form-control form-color">
+                        <option selected disabled value>成人</option>
+                        <option value="1">1 位成人</option>
+                        <option value="2">2 位成人</option>
+                        <option disabled value="3">3 位成人</option>
+                        <option disabled value="4">4 位成人</option>
+                        <option disabled value="5">5 位成人</option>
+                        <option disabled value="6">6 位成人</option>
+                        <option disabled value="7">7 位成人</option>
+                        <option disabled value="8">8 位成人</option>
                     </select>
                 </div>
 
                 <div class="filter">
-                    <select class="form-control form-color">
-                        <option selected disabled>孩童</option>
-                        <option>0 名孩童</option>
-                        <option>1 名孩童</option>
-                        <option>2 名孩童</option>
-                        <option>3 名孩童</option>
-                        <option>4 名孩童</option>
-                        <option>5 名孩童</option>
+                    <select id="myChildNum" aria-label="State" class="form-control form-color">
+                        <option selected disabled value>孩童</option>
+                        <option disabled value="0">0 名孩童</option>
+                        <option disabled value="1">1 名孩童</option>
+                        <option disabled value="2">2 名孩童</option>
+                        <option disabled value="3">3 名孩童</option>
+                        <option disabled value="4">4 名孩童</option>
                     </select>
                 </div>
 
                 <div class="filter">
-                    <select class="form-control form-color">
-                        <option selected disabled>評分</option>
-                        <option>9 分以上</option>
-                        <option>8 分以上</option>
-                        <option>7 分以上</option>
-                        <option>6 分以上</option>
-                        <option>5 分以上</option>
-                        <option>暫未獲評</option>
+                    <select id="myScore" aria-label="State" class="form-control form-color">
+                        <option selected disabled value>評分</option>
+                        <option value="9">9 分以上</option>
+                        <option value="8">8 分以上</option>
+                        <option value="7">7 分以上</option>
+                        <option value="6">6 分以上</option>
                     </select>
                 </div>
 
                 <div class="filter">
-                    <select class="form-control form-color">
-                        <option selected disabled>房間預算 (每晚)</option>
-                        <option>TWD 0 - TWD 1000</option>
-                        <option>TWD 1000 - TWD 2000</option>
-                        <option>TWD 2000 - TWD 3000</option>
-                        <option>TWD 3000 - TWD 5000</option>
-                        <option>TWD 5000 - TWD 6000</option>
-                        <option>TWD 6000 以上</option>
+                    <select id="myPrice" aria-label="State" class="form-control form-color">
+                        <option selected disabled value>房間預算 (每晚)</option>
+                        <option value="0-1000">TWD 0 - TWD 1000</option>
+                        <option value="1000-2000">TWD 1000 - TWD 2000</option>
+                        <option value="2000-3000">TWD 2000 - TWD 3000</option>
+                        <option value="3000-4000">TWD 3000 - TWD 4000</option>
+                        <option value="4000-5000">TWD 4000 - TWD 5000</option>
+                        <option value="5000-6000">TWD 5000 - TWD 6000</option>
                     </select>
                 </div>
 
                 <div class="filter">
-                    <button class="form-control btn-primary">搜尋</button>
+                    <button id="mySearch" class="form-control btn-primary">搜尋</button>
                 </div>
             </nav>
         </div>
 
-        <div id="myCard">
-            <div class="card">
-                <div class="images">
-                    <a href="https://www.booking.com/hotel/tw/bao-lai-shan-ze-ju-villahui-guan.zh-tw.html"
-                        target="_blank"><img alt="寶來山澤居Villa"
-                            src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/160577599.jpg?k=9154112cbfa0d51595342302e4c823836000bc1c776383c728276c00f0ee02da">
-                    </a>
-                </div>
-                <div class="product">
-                    <h2><b>寶來山澤居Villa</b></h2>
-                    <a href="https://www.booking.com/hotel/tw/bao-lai-shan-ze-ju-villahui-guan.zh-tw.html#map_opened-hotel_header"
-                        target="_blank"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>高雄市六龜區中正路 90 號</a>
-                    <p><i class="fa fa-bed fa-fw" aria-hidden="true"></i>標準雙人房、加大雙人床房、小木屋</p>
-                    <p>Shanze Bora villa 位在六龜區，提供 WiFi（免費）、免費自行車租借服務和花園。住宿設有 SPA 浴缸。<br>
-                        所有房型都有戶外休息區、空調、平面電視，以及私人衛浴，並提供淋浴設施和吹風機。<br>
-                        住宿提供冰箱和電熱水壺。<br>
-                        Shanze Bora villa 每天供應自助式早餐。<br>
-                        這間住宿有溫泉浴池。<br>
-                        最近的機場是台南機場，距離 Shanze Bora villa 54 公里。</p>
-                </div>
-                <div class="booking">
-                    <div>
-                        <a href="https://www.booking.com/hotel/tw/bao-lai-shan-ze-ju-villahui-guan.zh-tw.html#tab-reviews"
-                            target="_blank">
-                            <div class="review-score">8.8</div>很棒<br>213 則評語
-                        </a>
-                    </div>
-                    <button class="btn btn-primary review-btn"
-                        onclick="location.href='https://www.booking.com/hotel/tw/bao-lai-shan-ze-ju-villahui-guan.zh-tw.html'">訂房</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="images">
-                    <a href="https://www.booking.com/hotel/tw/cang-qing-gu-du-jia-zhuang-yuan.zh-tw.html"
-                        target="_blank">
-                        <img alt="藏青谷 莊園Valley Statt Manor"
-                            src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/264815108.jpg?k=8530e48b535a8fe09a1a5a8f5a4c21806173e59bd98f70e35cc1b2f1d97cdfae">
-                    </a>
-                </div>
-                <div class="product">
-                    <h2><b>藏青谷 莊園Valley Statt Manor</b></h2>
-                    <a href="https://www.booking.com/hotel/tw/cang-qing-gu-du-jia-zhuang-yuan.zh-tw.html#map_opened-hotel_header"
-                        target="_blank"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>高雄市六龜區和平路 130-72 號</a>
-                    <p><i class="fa fa-bed fa-fw" aria-hidden="true"></i>雙人房/雙人床房、四人房</p>
-                    <p>藏青谷莊園Valley Statt Manor 位於六龜區，享有河景，設有餐廳、共用休息室、花園和露台。<br>
-                        藏青谷莊園Valley Statt Manor 提供 WiFi 和免費私人停車位。<br>
-                        每個房型都提供附淋浴設施、吹風機和免費盥洗用品的私人衛浴。<br>
-                        這間住宿提供單點式或美式早餐。<br>
-                        最近的機場是台南機場，距離藏青谷莊園Valley Statt Manor 48 公里。住宿提供付費機場接駁服務。</p>
-                </div>
-                <div class="booking">
-                    <div>
-                        <a href="https://www.booking.com/hotel/tw/cang-qing-gu-du-jia-zhuang-yuan.zh-tw.html#tab-reviews"
-                            target="_blank">
-                            <div class="review-score">9.4</div>好極了<br>121 則評語
-                        </a>
-                    </div>
-                    <button class="btn btn-primary review-btn"
-                        onclick="location.href='https://www.booking.com/hotel/tw/cang-qing-gu-du-jia-zhuang-yuan.zh-tw.html'">訂房</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="images">
-                    <a href="https://www.booking.com/hotel/tw/yellow-and-black-guest-house.zh-tw.html" target="_blank">
-                        <img alt="香蕉與黑膠三合院"
-                            src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/94795952.jpg?k=fc4a7f736a2184012ef35ac9232c499042e5f8b952fb1e78b057ddd80a4adf31">
-                    </a>
-                </div>
-                <div class="product">
-                    <h2><b>香蕉與黑膠三合院</b></h2>
-                    <a href="https://www.booking.com/hotel/tw/yellow-and-black-guest-house.zh-tw.html#map_opened-hotel_header"
-                        target="_blank"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>高雄市美濃區興隆一街 112 巷 34
-                        號</a>
-                    <p><i class="fa fa-bed fa-fw" aria-hidden="true"></i>雙人房、雙床房、頂級四人房、家庭房</p>
-                    <p>Yellow And Black Guest House 位於美濃區，設有餐廳、花園和 WiFi（免費），距離美濃湖 1.9 公里，距離旗山孔廟 14 公里。<br>
-                        Yellow And Black Guest House 的每間客房都有空調和私人衛浴。<br>
-                        這間住宿每個早上供應亞洲風味早餐。<br>
-                        Yellow And Black Guest House 距離大津瀑布 21 公里，距離 38 高地（38 Highland） 26 公里。<br>
-                        最近的機場是台南機場，距離 Yellow And Black Guest House 37 公里。</p>
-                </div>
-                <div class="booking">
-                    <div>
-                        <a href="https://www.booking.com/hotel/tw/yellow-and-black-guest-house.zh-tw.html#tab-reviews"
-                            target="_blank">
-                            <div class="review-score">9.4</div>好極了<br>101 則評語
-                        </a>
-                    </div>
-                    <button class="btn btn-primary review-btn"
-                        onclick="location.href='https://www.booking.com/hotel/tw/yellow-and-black-guest-house.zh-tw.html'">訂房</button>
-                </div>
-            </div>
-        </div>
+        <div id="display-products"></div>
     </div>
 
 
     <!-- Custom JavaScript for this Project -->
     <script src="js/agency.js"></script>
+    <script src="js/Kaohsiung.js"></script>
 
 </body>
 

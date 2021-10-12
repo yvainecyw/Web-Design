@@ -60,17 +60,14 @@
         $('html, body').animate({ scrollTop: 0 }, 300, 'linear');
     });
 
-    /* Toggle the side navigation */
 
     $(document).ready(function () {
+        /* Toggle the side navigation */
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar').toggleClass('active');
         });
-    });
 
-    /* Calendar Button */
-
-    $(document).ready(function () {
+        /* Calendar Button */
         $('#rangestart').calendar({
             type: 'date',
             endCalendar: $('#rangeend')
