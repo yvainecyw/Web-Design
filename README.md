@@ -1,11 +1,13 @@
 # 原住民推廣平台
-- 這是一個課堂分組專題，主要是設計一個布農族地區的旅遊網站來幫助偏向地區，我負責的部分是訂房資訊。
-- 使用的軟體及技術：Visual Studio Code、Node.js、Boostrap4、HTML5、CSS3、jQuery。
+* 這是一個課堂分組專題，主要是設計一個布農族地區的旅遊網站來幫助偏向地區，我負責的部分是訂房資訊。
+* 使用的軟體及技術：Visual Studio Code、Node.js、Boostrap4、HTML5、CSS3、jQuery。
 ## 網站展示
 ### 訂房資訊
-#### WEB
+* DESKTOP
+
 ![image](./Docs/%E7%95%B6%E5%9C%B0%E8%A8%82%E6%88%BF%E8%B3%87%E8%A8%8A(WEB).jpeg)
-#### MOBILE
+* MOBILE
+
 ![image](./Docs/%E7%95%B6%E5%9C%B0%E8%A8%82%E6%88%BF%E8%B3%87%E8%A8%8A(MOBILE).jpeg)
 ### 首頁
 ![image](./Docs/%E9%A6%96%E9%A0%81.jpeg)
